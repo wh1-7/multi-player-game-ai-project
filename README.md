@@ -3,65 +3,41 @@
 一个基于OpenAI Gym风格的多人游戏AI对战框架，支持五子棋和贪吃蛇游戏，提供图形界面和命令行两种模式。
 
 
-### 1. 虚拟环境配置 (推荐)
+### 1. conda 虚拟环境  (推荐)
+在conda提供的命令行界面里键入命令:
 
 ```bash
-# 创建虚拟环境
-python -m venv game_ai_env
+conda create --name MultiPlayerGame python=3.12  # 创建虚拟环境, 推荐python版本为3.12
 
 # 激活虚拟环境
-# Windows:
-game_ai_env\Scripts\activate
-
-# macOS/Linux:
-source game_ai_env/bin/activate
-
+conda activate MultiPlayerGame
 # 升级pip
 python -m pip install --upgrade pip
 ```
 
-### 2. 项目下载和安装
-
+### 2. 项目clone
 ```bash
-# 克隆项目 (如果使用Git)
+# clone 项目 (推荐使用Git, 当然你也可以直接download下来)
 git clone https://github.com/ying-wen/multi-player-game-ai-project
-cd multi-player-game-ai-project
-
-# 或者直接下载项目文件包并解压
 # 进入项目目录
 cd multi-player-game-ai-project
 ```
 
-### 4. 依赖安装
+### 4. python 依赖安装
 
 ```bash
 # 安装项目依赖
 pip install -r requirements.txt
-
-# 手动安装 (如果requirements.txt不可用)
-pip install pygame numpy typing-extensions
 ```
 
-### 5. 图形界面环境配置
-
-#### macOS
-```bash
-# 如果使用SSH连接，需要安装XQuartz
-brew install --cask xquartz
-
-# 重启终端或重新登录
-```
 
 #### Linux
 ```bash
 # 安装图形界面支持
 # Ubuntu/Debian:
-sudo apt install python3-tk
+sudo apt install python3-tk #如果使用虚拟环境, tk 也可以使用 pip install tk 安装在python虚拟环境下, 这里是给系统的python解释器安装 pip 包
 
-# CentOS/RHEL:
-sudo yum install tkinter
-
-# 如果使用SSH，启用X11转发
+# 如果使用ssh连接远程服务器，启用X11转发可以在本地显示图形界面
 ssh -X username@hostname
 ```
 
@@ -465,12 +441,13 @@ WINDOW_HEIGHT = 600      # 窗口高度
 
 欢迎提交Issue和Pull Request来改进这个项目！
 
-### 开发指南
-1. Fork项目
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开Pull Request
+### Github + git 的开发指南(建议预先学习git)
+1. 在github上 Fork 项目
+2. git clone到本地
+3. 在本地创建特性分支 (`git checkout -b feature/AmazingFeature`)
+4. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+5. 推送到分支 (`git push origin feature/AmazingFeature`)
+6. 打开Pull Request
 
 ## 📄 许可证
 
