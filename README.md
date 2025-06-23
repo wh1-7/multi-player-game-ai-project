@@ -9,10 +9,6 @@
 # 创建虚拟环境
 python -m venv game_ai_env
 
-# 激活虚拟环境
-# Windows:
-game_ai_env\Scripts\activate
-
 # macOS/Linux:
 source game_ai_env/bin/activate
 
