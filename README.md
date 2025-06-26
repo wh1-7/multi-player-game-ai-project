@@ -7,7 +7,7 @@
 在conda提供的命令行界面里键入命令:
 
 ```bash
-conda create --name MultiPlayerGame python=3.12  # 创建虚拟环境, 推荐python版本为3.12
+conda create --name MultiPlayerGame python=3.11  # 创建虚拟环境, 推荐python版本为3.11
 
 # 激活虚拟环境
 conda activate MultiPlayerGame
@@ -167,14 +167,13 @@ typing-extensions   # 类型提示支持
 ```bash
 # 开发和测试
 pytest              # 单元测试框架
-black               # 代码格式化
+Ruff               # 代码格式化(建议vscode安装插件 'Ruff' )
 flake8              # 代码风格检查
 
 # 性能分析
 cProfile            # Python内置性能分析器
 memory_profiler     # 内存使用分析
 ```
-
 ## 🧪 测试验证
 
 ### 运行完整测试
@@ -290,12 +289,11 @@ conda install pygame numpy
 A:
 ```bash
 # 删除旧环境
-rm -rf game_ai_env
+conda env remove --name your_env_name
 
 # 重新创建
-python -m venv game_ai_env
-source game_ai_env/bin/activate  # Linux/macOS
-# 或 game_ai_env\Scripts\activate  # Windows
+conda create --name MultiPlayerGame python=3.11  # 创建虚拟环境, 推荐python版本为3.11
+
 pip install -r requirements.txt
 ```
 
@@ -306,7 +304,7 @@ A:
 - **Windows**: 检查是否安装了Visual C++ Redistributable
 - **macOS**: 安装XQuartz (`brew install --cask xquartz`)
 - **Linux**: 安装图形界面支持 (`sudo apt install python3-tk`)
-
+- **虚拟环境** `pip install tk`
 **Q: SSH远程连接无法显示图形？**
 A:
 ```bash
@@ -319,6 +317,7 @@ ssh -X username@hostname
 **Q: 中文显示乱码？**
 A: 项目已使用英文界面，避免了字体问题
 
+tip:在大多数情况下请尽量使用英文命名你的任何工作， 可以解决许多潜在的问题
 ### 游戏问题
 
 **Q: 贪吃蛇移动太快/太慢？**

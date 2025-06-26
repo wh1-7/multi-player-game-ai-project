@@ -8,6 +8,7 @@ import sys
 import os
 import subprocess
 
+
 def main():
     print("=" * 50)
     print("🎮 多游戏AI对战平台")
@@ -21,12 +22,12 @@ def main():
     print("5. 运行测试")
     print("6. 退出")
     print()
-    
+
     while True:
         try:
             choice = input("请输入选择 (1-6): ").strip()
-            
-            if choice == '1':
+
+            if choice == "1":
                 print("\n🎯 启动多游戏图形界面...")
                 print("支持:")
                 print("- 五子棋: 鼠标点击落子")
@@ -34,17 +35,15 @@ def main():
                 print("- 多种AI难度选择")
                 print("- 暂停/继续功能")
                 print()
-                
+
                 # 检查GUI文件是否存在
                 if os.path.exists("gui_game.py"):
                     subprocess.run([sys.executable, "gui_game.py"])
-                elif os.path.exists("multi_game_gui.py"):
-                    subprocess.run([sys.executable, "multi_game_gui.py"])
                 else:
                     print("❌ GUI文件未找到，请检查项目文件")
                 break
-                
-            elif choice == '2':
+
+            elif choice == "2":
                 print("\n🐍 启动贪吃蛇专用图形界面...")
                 print("特性:")
                 print("- 专为贪吃蛇优化的界面")
@@ -52,35 +51,57 @@ def main():
                 print("- 多种贪吃蛇AI算法")
                 print("- 实时状态显示")
                 print()
-                
+
                 if os.path.exists("snake_gui.py"):
                     subprocess.run([sys.executable, "snake_gui.py"])
                 else:
                     print("❌ 贪吃蛇GUI文件未找到")
                 break
-                
-            elif choice == '3':
+
+            elif choice == "3":
                 print("\n♟️  启动五子棋命令行版本...")
-                subprocess.run([sys.executable, "main.py", "--game", "gomoku", "--player1", "human", "--player2", "random"])
+                subprocess.run(
+                    [
+                        sys.executable,
+                        "main.py",
+                        "--game",
+                        "gomoku",
+                        "--player1",
+                        "human",
+                        "--player2",
+                        "random",
+                    ]
+                )
                 break
-                
-            elif choice == '4':
+
+            elif choice == "4":
                 print("\n🐍 启动贪吃蛇命令行版本...")
-                subprocess.run([sys.executable, "main.py", "--game", "snake", "--player1", "human", "--player2", "snake_ai"])
+                subprocess.run(
+                    [
+                        sys.executable,
+                        "main.py",
+                        "--game",
+                        "snake",
+                        "--player1",
+                        "human",
+                        "--player2",
+                        "snake_ai",
+                    ]
+                )
                 break
-                
-            elif choice == '5':
+
+            elif choice == "5":
                 print("\n🧪 运行项目测试...")
                 subprocess.run([sys.executable, "test_project.py"])
                 break
-                
-            elif choice == '6':
+
+            elif choice == "6":
                 print("\n👋 再见！")
                 sys.exit(0)
-                
+
             else:
                 print("❌ 无效选择，请输入 1-6")
-                
+
         except KeyboardInterrupt:
             print("\n\n👋 再见！")
             sys.exit(0)
@@ -88,5 +109,6 @@ def main():
             print("\n\n👋 再见！")
             sys.exit(0)
 
+
 if __name__ == "__main__":
-    main() 
+    main()
