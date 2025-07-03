@@ -20,12 +20,14 @@ class SnakeGame(BaseGame):
             'timeout': config.GAME_CONFIGS['snake']['timeout'],
             'max_moves': config.GAME_CONFIGS['snake']['max_moves']
         }
-        super().__init__(game_config)
+        
         
         self.board_size = board_size
+        self.board=np.zeros((board_size,board_size),dtype=int)
         self.initial_length = initial_length
         self.food_count = food_count
-        
+        super().__init__(game_config)
+
         # 蛇的位置和方向
         self.snake1 = []  # 玩家1的蛇
         self.snake2 = []  # 玩家2的蛇

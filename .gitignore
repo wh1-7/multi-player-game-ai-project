@@ -98,6 +98,7 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+game_ai_env/
 
 # IDE
 .vscode/
