@@ -14,7 +14,7 @@ from games.snake import SnakeEnv
 
 # 导入智能体模块
 from agents import (
-    HumanAgent, RandomBot, MinimaxBot, MCTSBot, RLBot, BehaviorTreeBot
+    HumanAgent, RandomBot, MinimaxBot, MCTSBot, RLBot, BehaviorTreeBot, SnakeAI
 )
 
 
@@ -29,7 +29,8 @@ def create_agent(agent_type: str, player_id: int, name: str = None) -> Any:
         'minimax': MinimaxBot,
         'mcts': MCTSBot,
         'rl': RLBot,
-        'behavior_tree': BehaviorTreeBot
+        'behavior_tree': BehaviorTreeBot,
+        'snake_ai': SnakeAI
     }
     
     if agent_type not in agent_map:
